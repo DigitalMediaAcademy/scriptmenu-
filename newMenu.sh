@@ -3,7 +3,7 @@ studentPath="/Users/student"
 a=1
 echo "--------------Menu Options-----------------"
 while true; do
- optionsNew=("Create Student" "Delete Student" "Install Adobe" "Repair Wifi" "Fix Massive" "Fix Izotope" "Quit")
+ optionsNew=("Create Student" "Delete Student" "Install Adobe" "Repair Wifi" "Fix Massive" "Fix Izotope" "Fix Arduino" "Fix Minecraft" "Quit")
  select optN in "${optionsNew[@]}"
   do
       case $optN in
@@ -44,9 +44,12 @@ while true; do
               break
               ;;
           "Fix Arduino")
-              osacript newArdhahfix.scpt
+              osascript newArdhahfix.scpt
               break
               ;;
+          "Fix Minecraft")
+              sudo chown -R student:staff /Applications/Minecraft.app
+              break;;
           "Quit")
               break
               ;;
